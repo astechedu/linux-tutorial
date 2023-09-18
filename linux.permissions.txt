@@ -5,7 +5,11 @@ Commands: uptime, wall, du, df -h, free, cat /etc/group, cat /etc/passwd, ps -ef
 
 --------------------------------------------------------------------------
 
->>Create User & Remove: 
+==========================================================================
+
+------------------------
+>>Create User & Remove : 
+------------------------
 
 sudo adduser username                //Add User
 sudo usermod -aG sudo username       //Addin User to sudo group
@@ -24,7 +28,10 @@ Note: The chown command changes the owning user. When using chown, you need to s
 
 ---------------------------------------------------------------------------
 
->>CHGRP:
+===========================================================================
+------------------------
+>>CHGRP (Change Group) :
+------------------------
 
 //chgrp Command Syntax Explained:
 https://phoenixnap.com/kb/chgrp-command 
@@ -73,13 +80,32 @@ less /etc/bash.bashrc
 
 -------------------------------------------------------------
 
->>Permissions Using chmod:
+=============================================================
+
+---------------------------
+>>Permissions Using chmod :
+---------------------------
 
 //How do I use chmod to change permissions?:
 //How to see the permissions   (ls -ltr)
 
 Settings Permissions With chmod
 
+    read    (r)
+    write   (w)
+    execute (x)
+
+    user  (u)
+    group (g)
+    other (o)
+    all   (a)
+
+
+  user(current)   group other
+     rwx           rwx   rwx
+     ---           ---   ---
+     
+     
 >>The Octal Notations: 
 
 -------------------------------------------------
@@ -95,45 +121,31 @@ Octal   Binary   File Mode    Permission Type      |
 7       111      rwx          Read, Weite & Execute
 -------------------------------------------------
 
-  user(current)   group other
-     rwx           rwx   rwx
-     ---           ---   ---
 
 chmod 777 [file name]
 chmod 435 [file name]
 chmod 775 [file name]
+
 chmod u=r,g=wx,o=rx [file name]
 chmod ug+rwx,o=rx [file name]
 chmod ugo+rwx [file name]
 
-
-chmoe o 
-chmod o+
-chmod o+x
 chmod o+x index.php
 chmod ugo-rwx index.php
 chmod ug+rw, o-x index.php
 
 
+>>Syntax:
 
-chmod [references][operator][modes] filename
+//chmod [references][operator][modes] filename
 
 Ex: chmod u+x file1
-
-    read    (r)
-    write   (w)
-    execute (x)
-
-    user  (u)
-    group (g)
-    other (o)
-    all   (a)
 
 
 $ ls -l Or ls -ltr
 
 total 28  
-         (   rwx-rwx-rws    )
+         (   rwx-rwx-rwx    )
          
 -rw-r--r--  1 user       group     273 Mar 24 11:28 file1
 -rwxrwxrwx  1 user       group    1449 Jan 29 14:01 file2
@@ -152,13 +164,19 @@ chmod a=rx file3    // a=ugo
 man chmod          //
 
 
+
 --------------------------------------------------------------
 
-CHOWN: 
+
+====================================================================
+
+-----------------------
+>>CHOWN (Change Own)  : 
+-----------------------
 
 //Change the owner of a File (Using user name)
 
-
+>>Syntax:
 sudo chown <username> <File name> 
 
 Ex:
@@ -166,14 +184,17 @@ sudo chown jtp Demo.txt
 
 sudo chown 1000 Demo.txt     //Change the owner of a file
 
-//Change the Group of a File
+
+>>Change the Group of a File:
+
 sudo chown :groupname Demo.txt 
 OR
 sudo chown :GID Demo.txt
 sudo chown :adm Demo.txt 
 
 
-//Change the User and Group Name
+>>Change the User and Group Name:
+
 sudo chown <User name/UID>:<Group name/GID> <File name> 
 sudo chown jtp:adm Demo.txt 
 
@@ -281,9 +302,9 @@ chown —reference=ReferenceFILE
 chown —from=CurrentUser:CurrentGroup NewUser:NewGroup FILE
 chown —from=root:group2 linuxuser:group3 sample3
 
----------------------------------------------------------
+----------------------------------------------------------------------
 
-PHP Install On Ubuntu:
+
 
 
 
