@@ -5,6 +5,15 @@ Commands: uptime, wall, du, df -h, free, cat /etc/group, cat /etc/passwd, ps -ef
 
 --------------------------------------------------------------------------
 
+Chmod: To change file mode
+Chown: To change user ownership
+Chgrp: To change group ownership
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+CMDs: ls -l, ls -ltr, ls - la
+
 ==========================================================================
 
 ------------------------
@@ -32,6 +41,8 @@ Note: The chown command changes the owning user. When using chown, you need to s
 ------------------------
 >>CHGRP (Change Group) :
 ------------------------
+
+>>To Change group ownership
 
 //chgrp Command Syntax Explained:
 https://phoenixnap.com/kb/chgrp-command 
@@ -174,6 +185,8 @@ man chmod          //
 >>CHOWN (Change Own)  : 
 -----------------------
 
+>>To Change group ownership
+
 //Change the owner of a File (Using user name)
 
 >>Syntax:
@@ -301,6 +314,19 @@ chown linuxuser: sample3
 chown —reference=ReferenceFILE
 chown —from=CurrentUser:CurrentGroup NewUser:NewGroup FILE
 chown —from=root:group2 linuxuser:group3 sample3
+
+======================================================================
+----------------------------------------------------------------------
+
+>>
+Chmod: To change file mode
+Chown: To change user ownership
+Chgrp: To change group ownership
+
+//chown cmds
+chown -c sonu <fileName>      //Change user ownership ajay to sonu
+chgrp -c sonu <fileName>      //Change group ownership ajay to sonu
+
 
 ----------------------------------------------------------------------
 
