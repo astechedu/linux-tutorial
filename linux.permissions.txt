@@ -350,29 +350,19 @@ chgrp -c sonu <fileName>      //Change group ownership ajay to sonu
 
 ----------------------------------------------------------------------
 
+>>Change the primary group of a user: usermod -g
 
+sudo usermod -g www-data foobar
+id foobar
 
+sudo usermod -g foobar foobar
 
+>>Add or Change Users in Secondary Groups: adduser and usermod -G
+sudo adduser foobar www-data
 
+sudo usermod -G www-data foobar          // -G group user
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sudo usermod -a -G group1,group2 foobar  // -aG group1,group2 user
 
 
 
