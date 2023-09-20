@@ -32,6 +32,23 @@ sudo usermod -aG groupname username             //Add User to Group
 sudo groupdel groupname             // Remove Group
 sudo gpasswd -d username groupname  //Remove user from group
 
+sudo useradd -u 600 -g users -G sub1,sub2, foo  //Create a user (id 600), primary gorup (-g users), subgroups(sub1,sub2)
+
+sudo userdel [user_name]
+sudo userdel -r [user_name]
+sudo userdel -f [user_name]
+sudo killall -u [user_name]     //
+
+gpsswd -d [user_name] [group_name]       //Remove user from specified group
+sudo userdel [user_name] [group_name]   
+
+//Helping
+
+man groups
+man usermod
+man gpasswd
+man deluser
+
 //Note: 
 Note: The chown command changes the owning user. When using chown, you need to specify the user and group name, while chgrp only requires the group name.
 
@@ -52,9 +69,12 @@ chgrp [OPTION] [GROUP_NAME] [DIRECTORY/FILE_NAME]
     [OPTION] - Additional options. You can use the command without them.
     [GROUP_NAME] - The group you want to assign the file to.
     [DIRECTORY/FILE_NAME] - The target directory/file.
+
+//Delete group
+   groupdel [group_name]
    
 //Check user grup id    
-id -g [Username]   
+id -g [Username]        //Chages: /etc/group, /etc/gshadow
 
 //Change Directory Group
 Syntax: 
@@ -75,7 +95,7 @@ sudo chgrp --reference=test atom_273.snap
 
 
 //Display chgrp Execution Details
-sudo chgrp -c -R [GROUP_NAME] [DIRECTORY/FILE_NAME]
+sudo chgrp -c -R [GROUP_NAME] [DIRECTORY/FILE_NAME]     // -c or -v
 sudo chgrp -c -R bosko example
 
 //Hide chgrp Command Errors
